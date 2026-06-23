@@ -14,7 +14,7 @@ permissions:
 jobs:
   hello-world:
     runs-on: ubuntu-latest
-
+    environment: production
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -32,4 +32,7 @@ jobs:
       run: date
 
     - name: Secret value
-      run: echo '${{secrets.REP_MESSAGE}}'
+      run: echo ${{secrets.REP_MESSAGE}}
+
+    - name: Production envirenment
+      run: echo ${{ secrets.MESSAGE }}
