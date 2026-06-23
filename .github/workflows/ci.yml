@@ -30,3 +30,6 @@ jobs:
 
     - name: Show date
       run: date
+
+    - name: Secret value
+    - run: echo "${{secret.REP_MESSAGE}}"
